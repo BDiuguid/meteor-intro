@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Meteor Intro</title>
+
+		<meta name="description" content="Introduction to Meteor JS">
+		<meta name="author" content="Ben Diuguid">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="icon" href="./favicon.png" type="image/png" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Meteor JS</h1>
+					<h3>Light Speed App Development</h3>
+					<p>
+						<small>Created by <a href="https://bdiuguid.github.io" target="_blank">Ben Diuguid</a> / <a href="https://twitter.com/bendiuguid" target="_blank">@bendiuguid</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>History of the Web</h2>
+				</section>
+
+				<section>
+					<p>Page Based Web</p>
+					<p>Server-side applications</p>
+				</section>
+
+				<section>
+					<p>Around 2012-2014 change begins</p>
+					<p>Front-end interactivity</p>
+					<p>Driven by mobile devices</p>
+					<h1>TODO MEME buzz lightyear???</h1>
+				</section>
+
+				<section>
+					<p>This type of app is much harder to write</p>
+					<p>Code in the cloud, code on the client</p>
+					<p>Support multiple platforms, multiple codebases</p>
+					<p>Expensive to have and native apps for every platform</p>
+					<!-- <p>Lets be real it's 2015 you need a responsive web app, Android, and iOS app to really compete</p> -->
+				</section>
+
+				<section>
+					<h2>The Answer?</h2>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<h2>The Genesis Of Meteor</h2>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<p>Complete JS Application Platform</p>
+					<p>SDK and different libraries</p>
+					<p>Build tooling</p>
+					<p>Distribution: mobile updates, hot code push</p>
+					<p>running code in the cloud</p>
+				</section>
+
+				<section>
+					<h2>The Past</h2>
+				</section>
+
+				<section>
+					<h3>HTTP Model</h3>
+					<p>Classic 3-tier architecture</p>
+					<ul>
+						<li>UI</li>
+						<li>Server</li>
+						<li>Database</li>
+					</ul>
+					<p>Client makes a request, the server fufills that request, and that's the end of the line</p>
+				</section>
+
+				<section>
+					<p>What about apps built by Google, Facebook, or Twitter?</p>
+					<p>Is refreshing the page necessary anymore?</p>
+				</section>
+
+				<section>
+					<h3>A new challenger approaches...</h3>
+					<h1>TODO MEME streetfigher</h1>
+				</section>
+
+				<section>
+					<h2>Enter Meteor</h2>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<p>Modern apps serve data, not html</p>
+					<p class="fragment fade-in">Modern apps should not need a refresh button</p>
+					<p class="fragment fade-in">Modern apps should exist in real time</p>
+				</section>
+
+				<section>
+					<h4>Same type of stack across modern apps</h4>
+					<ul>
+						<li class="fragment fade-in">Stateful bi-directional protocol that's not HTTP</li>
+						<li class="fragment fade-in">Way of watching database for changes</li>
+						<li class="fragment fade-in">Protocol that you've invented that runs on top of WebSockets to push data to the client in realtime</li>
+						<li class="fragment fade-in">Some kind of cache on the client, because you can't afford the round trip to the server</li>
+						<li class="fragment fade-in">As data changes, actually change the DOM</li>
+					</ul>
+					<!-- <p>Stateful bi-directional protocol that's not HTTP</p>
+					<p>Way of watching database for changes</p>
+					<p>Protocol that you've invented that runs on top of WebSockets to push data to the client in realtime</p>
+					<p>Some kind of cache on the client, because you can't afford the round trip to the server to keep things up to date</p>
+					<p>As data changes, actually change the DOM</p> -->
+				</section>
+
+				<section>
+					<h2>What is Meteor?</h2>
+					<p class="fragment fade-in">Open Source platform for building apps in JS</p>
+					<p class="fragment fade-in">Built to power the next generation apps</p>
+				</section>
+
+				<section>
+					<h3>Modern user interface</h3>
+					<p>
+						Make an app that feels like a top-tier web application like Facebook or Twitter, or like a great desktop app — not like a bunch of pages connected by links.
+					</p>
+				</section>
+
+				<section>
+					<h3>Radically less code</h3>
+					<p>
+						Accomplish in 10 lines what would otherwise take 1000, thanks to a reactive programming model that extends all the way from the database to the user's screen.
+					</p>
+				</section>
+
+				<section>
+					<h3>Browser and Mobile</h3>
+					<p>
+						A great experience both on the web and as a phone or tablet app.
+					</p>
+				</section>
+
+				<section>
+					<h3>One language everywhere</h3>
+					<p>
+						Isomorphic/Universal APIs mean that the same code, written in the same language, can run on both client and server.
+					</p>
+				</section>
+
+				<section>
+					<h3>Live updates</h3>
+					<p>
+						Data updates live on the screen as it changes. Users can collaborate seamlessly.
+					</p>
+				</section>
+
+				<section>
+					<h3>Unified package system</h3>
+					<p>
+						One world of packages that work identically on browsers, servers and mobile devices. (Pull in npm and Cordova packages too!) One build tool that builds all parts of your app.
+					</p>
+				</section>
+
+				<section>
+					<h3>Ultra responsive</h3>
+					<p>
+						Changes made by a user are instantly visible, without the unprofessional laggy feeling that would result from waiting for a round trip to the server.
+					</p>
+				</section>
+
+				<section>
+					<h3>Hot deploys</h3>
+					<p>
+						Type one command to push your app into production and update all connected browsers and devices. No need to go through the App Store.
+					</p>
+				</section>
+
+				<section>
+					<h3>Galaxy is coming</h3>
+					<p>Containerized hosting solution by MDG</p>
+					<p>Using Docker, AWS, Kubernetes</p>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<h2>But How??</h2>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<h1>JavaScript</h1>
+					<small>The Gateway Drug</small>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<h4>The One Language To Rule Them All</h4>
+					<p>Runs everywhere</p>
+					<p>Easy to pick up</p>
+					<p>Modular community</p>
+				</section>
+
+				<section>
+					<h2>Meteor Core Projects</h2>
+				</section>
+
+				<section>
+					<h3>LiveQuery</h3>
+					<h3>DDP</h3>
+					<h3>Fullstack DB Drivers</h3>
+					<h3>Tracker</h3>
+					<h3>Blaze</h3>
+					<h3>IsoBuild</h3>
+				</section>
+
+				<section>
+					<h1>TODO METEOR BASICS</h1>
+					<h1>TODO MEME</h1>
+				</section>
+
+				<section>
+					<h3>Agenda</h3>
+					<ul>
+						<li>File/Folder Structure</li>
+						<li>Templates</li>
+						<li>Collections</li>
+						<li>Pubs and Subs</li>
+						<li>Routing</li>
+						<li>Reactivity/Session</li>
+						<li>Accounts</li>
+						<li>Deployment</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>File/Folder Structure</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Templates</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Collections</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Pubs and Subs</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Routing</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Reactivity/Sessions</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Accounts</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>Deployment</h3>
+					<p></p>
+				</section>
+
+				<section>
+					<h2>Questions So Far?</h2>
+				</section>
+
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>Demo time!</h2>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Growing Rapidly</h2>
+					<ul>
+						<li>Over TODO:XXX meetup groups around the world - <a href="http://meteor.meetup.com" target="_blank">meteor.meetup.com</a></li>
+						<li>Over TODO:XXX authored packages on <a href="https://atmospherejs.com/">atmospherejs.com</a></li>
+						<li>Ranked #10 on GitHub</li>
+					</ul>
+
+					<!-- <p>Over TODO:XXX meetup groups around the world - <a href="http://meteor.meetup.com" target="_blank">meteor.meetup.com</a></p>
+					<p>Over TODO:XXX authored packages on <a href="https://atmospherejs.com/">atmospherejs.com</a></p>
+					<p>Ranked #10 on GitHub</p> -->
+
+					<!-- <small>Over TODO:XXX meetup groups around the world - <a href="http://meteor.meetup.com" target="_blank">meteor.meetup.com</a></small>
+					<br>
+					<small>Over TODO:XXX authored packages on <a href="https://atmospherejs.com/">atmospherejs.com</a></small>
+					<br>
+					<small>Ranked #10 on GitHub</small> -->
+				</section>
+
+				<section>
+					<h2>Further Learning</h2>
+					<ul>
+						<li>Meteor.com - <a href="https://meteor.com/learn" target="_blank">meteor.com/learn</a></li>
+						<li>Official Meteor Tutorial - <a href="https://www.meteor.com/install" target="_blank">meteor.com/install</a></li>
+						<li>Discover Meteor - <a href="https://book.discovermeteor.com/" target="_blank">book.discovermeteor.com</a></li>
+						<li>Your First Meteor App - <a href="http://meteortips.com/first-meteor-tutorial/" target="_blank">meteortips.com</a></li>
+						<li>Bulletproof Meteor - <a href="https://bulletproofmeteor.com/" target="_blank">bulletproofmeteor.com</a></li>
+						<li>Crater.io - <a href="https://crater.io/" target="_blank">crater.io</a></li>
+						<li>Official Meteor Docs - <a href="https://docs.meteor.com/" target="_blank">docs.meteor.com</a></li>
+						<li>More Links - <a href="https://github.com/ericdouglas/Meteor-Learning" target="_blank">github.com/ericdouglas/Meteor-Learning</a></li>
+					</ul>
+					<!-- <p>Meteor.com - <a href="https://meteor.com/learn" target="_blank">meteor.com/learn</a></p>
+					<p>Official Meteor Tutorial - <a href="https://www.meteor.com/install" target="_blank">meteor.com/install</a></p>
+					<p>Discover Meteor - <a href="https://book.discovermeteor.com/" target="_blank">book.discovermeteor.com</a></p>
+					<p>Your First Meteor App - <a href="http://meteortips.com/first-meteor-tutorial/" target="_blank">meteortips.com</a></p>
+					<p>Bulletproof Meteor - <a href="https://bulletproofmeteor.com/" target="_blank">bulletproofmeteor.com</a></p>
+					<p>Crater.io - <a href="https://crater.io/" target="_blank">crater.io</a></p>
+					<p>Official Meteor Docs - <a href="https://docs.meteor.com/" target="_blank">docs.meteor.com</a></p>
+					<p>Meteor Learning - <a href="https://github.com/ericdouglas/Meteor-Learning" target="_blank">github.com/ericdouglas/Meteor-Learning</a></p>-->
+
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						+ Any Questions?
+						<br>
+						+ Source Code on GitHub
+						<br>
+						&nbsp; &nbsp; - <a href="https://github.com/bdiuguid/meteor-intro" target="_blank">github.com/bdiuguid/meteor-intro</a>
+						<br>
+						+ <a href="https://twitter.com/bendiuguid" target="_blank">@bendiuguid</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+	</body>
+</html>
