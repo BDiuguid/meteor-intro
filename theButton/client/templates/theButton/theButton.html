@@ -1,0 +1,32 @@
+<template name="theButton">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col s12 m6 l6 center-align">
+				{{#if currentUser}}
+					{{#if timeRemainingWhenClicked}}
+						You clicked on {{clicked}} with <span class="remaining-{{timeRemainingWhenClicked}}">{{timeRemainingWhenClicked}}s</span> remaining
+					{{else}}
+						{{#if timeRemaining}}
+							<button class="btn waves-effect waves-light" title="Click it!"></button>
+						{{else}}
+							<button class="btn waves-effect waves-light" disabled></button>
+						{{/if}}
+					{{/if}}
+				{{else}}
+					{{#if timeRemaining}}
+						<button class="btn waves-effect waves-light" disabled>You must log in</button>
+					{{else}}
+						<button class="btn waves-effect waves-light" disabled></button>
+					{{/if}}
+				{{/if}}
+			</div>
+			<div class="col s12 m6 l6 center-align">
+				<h3>{{countdown}}</h3>
+			</div>
+		</div>
+
+	</div>
+
+</template>

@@ -1,0 +1,29 @@
+<template name="home">
+
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">TheButton</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col s12 m6 l6 center-align">
+        <span class="flow-text">{{numParticipants}} participants</span>
+      </div>
+
+      <div class="col s12 m6 l6 center-align">
+        <span class="flow-text">{{> loginButtons align="right"}}</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  {{> theButton}}
+
+  {{> clickLog}}
+
+</template>

@@ -1,0 +1,14 @@
+<template name="clickLog">
+
+  <div class="container">
+    {{#each clickRecords}}
+      <div class="card hoverable">
+        <div class="card-content">
+          <span style="font-weight:bold;">{{email}}</span>
+            clicked with <span class="remaining-{{timeRemaining}}">{{timeRemaining}}s</span> remaining
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</template>

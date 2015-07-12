@@ -1,0 +1,13 @@
+/*.countdown-100ms, .countdown-10ms { color: #999;}
+
+span[class^='remaining-'] {
+	color: white;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+span[class^='remaining-5'] { background: purple; }
+span[class^='remaining-4'] { background: brown; }
+span[class^='remaining-3'] { background: green; }
+span[class^='remaining-2'] { background: #ffd100; }
+span[class^='remaining-1'] { background: #69f; }
+span[class^='remaining-0'] { background: hotpink; }*/
