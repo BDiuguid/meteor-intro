@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/ir_black.css">
 
 		<!-- Google Analytics -->
 		<script>
@@ -72,7 +72,7 @@
 				</section>
 
 				<section>
-					<p>Around 2012-2014 change begins</p>
+					<h3>Rise of the SPAs</h3>
 					<p>Front-end interactivity</p>
 					<p>Driven by mobile devices</p>
 					<h1>TODO MEME buzz lightyear???</h1>
@@ -82,7 +82,7 @@
 					<p>This type of app is much harder to write</p>
 					<p>Code in the cloud, code on the client</p>
 					<p>Support multiple platforms, multiple codebases</p>
-					<p>Expensive to have and native apps for every platform</p>
+					<p>Expensive to have native apps for every platform</p>
 					<!-- <p>Lets be real it's 2015 you need a responsive web app, Android, and iOS app to really compete</p> -->
 				</section>
 
@@ -97,25 +97,24 @@
 				</section>
 
 				<section>
-					<p>Complete JS Application Platform</p>
-					<p>SDK and different libraries</p>
-					<p>Build tooling</p>
-					<p>Distribution: mobile updates, hot code push</p>
-					<p>running code in the cloud</p>
+					<h3>Meteor Provides</h3>
+					<ul>
+						<li>Complete JS Application Platform</li>
+						<li>SDK and different libraries</li>
+						<li>Build tooling</li>
+						<li>Distribution: mobile updates, hot code push</li>
+						<li>Running code in the cloud</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>The Past</h2>
+					<h1>The Past</h1>
 				</section>
 
 				<section>
 					<h3>HTTP Model</h3>
 					<p>Classic 3-tier architecture</p>
-					<ul>
-						<li>UI</li>
-						<li>Server</li>
-						<li>Database</li>
-					</ul>
+					<p>UI -- Server -- Database</p>
 					<p>Client makes a request, the server fufills that request, and that's the end of the line</p>
 				</section>
 
@@ -163,16 +162,9 @@
 				</section>
 
 				<section>
-					<h3>Modern user interface</h3>
+					<h3>One language everywhere</h3>
 					<p>
-						Make an app that feels like a top-tier web application like Facebook or Twitter, or like a great desktop app — not like a bunch of pages connected by links.
-					</p>
-				</section>
-
-				<section>
-					<h3>Radically less code</h3>
-					<p>
-						Accomplish in 10 lines what would otherwise take 1000, thanks to a reactive programming model that extends all the way from the database to the user's screen.
+						Isomorphic/Universal APIs mean that the same code, written in the same language, can run on both client and server.
 					</p>
 				</section>
 
@@ -180,13 +172,6 @@
 					<h3>Browser and Mobile</h3>
 					<p>
 						A great experience both on the web and as a phone or tablet app.
-					</p>
-				</section>
-
-				<section>
-					<h3>One language everywhere</h3>
-					<p>
-						Isomorphic/Universal APIs mean that the same code, written in the same language, can run on both client and server.
 					</p>
 				</section>
 
@@ -205,9 +190,9 @@
 				</section>
 
 				<section>
-					<h3>Ultra responsive</h3>
+					<h3>Radically less code</h3>
 					<p>
-						Changes made by a user are instantly visible, without the unprofessional laggy feeling that would result from waiting for a round trip to the server.
+						Accomplish in 10 lines what would otherwise take 1000, thanks to a reactive programming model that extends all the way from the database to the user's screen.
 					</p>
 				</section>
 
@@ -217,6 +202,20 @@
 						Type one command to push your app into production and update all connected browsers and devices. No need to go through the App Store.
 					</p>
 				</section>
+
+				<!-- <section>
+					<h3>Modern user interface</h3>
+					<p>
+						Make an app that feels like a top-tier web application like Facebook or Twitter, or like a great desktop app — not like a bunch of pages connected by links.
+					</p>
+				</section> -->
+
+				<!-- <section>
+					<h3>Ultra responsive</h3>
+					<p>
+						Changes made by a user are instantly visible, without the unprofessional laggy feeling that would result from waiting for a round trip to the server.
+					</p>
+				</section> -->
 
 				<section>
 					<h3>Galaxy is coming</h3>
@@ -237,10 +236,11 @@
 				</section>
 
 				<section>
-					<h4>The One Language To Rule Them All</h4>
+					<h3>The One Language</h3>
+					<h3>To Rule Them All</h3>
 					<p>Runs everywhere</p>
-					<p>Easy to pick up</p>
-					<p>Modular community</p>
+					<p>Most popular language on GitHub</p>
+					<p>npm - Largest programming language package repository ever</p>
 				</section>
 
 				<section>
@@ -265,54 +265,198 @@
 					<h3>Agenda</h3>
 					<ul>
 						<li>File/Folder Structure</li>
-						<li>Templates</li>
+						<li>Packages</li>
+						<li>View Layer</li>
 						<li>Collections</li>
 						<li>Pubs and Subs</li>
-						<li>Routing</li>
-						<li>Reactivity/Session</li>
+						<li>Reactivity</li>
 						<li>Accounts</li>
 						<li>Deployment</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>File/Folder Structure</h3>
+
+					<section>
+						<h2>File/Folder Structure</h2>
+						<ul>
+							<li>/server - Code only run on server</li>
+							<li>/client - Code only run on client</li>
+							<li>/public - static assets like pics</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Load Order</h3>
+						<ul>
+							<li>/lib - Loaded <em>before</em> anything else</li>
+							<li>main.* files - Loaded <em>after</em> everything else</li>
+							<li>Everything else loads in alphabetical order based on file name</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Otherwise unopinionated</h4>
+						<p>Meteor is great at locating all your code</p>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Packages</h2>
+					<ul>
+						<li>Meteor Core Packages</li>
+						<li>Official Packages</li>
+						<li>Third-party Packages</li>
+						<li>Local Packages</li>
+						<li>NPM Packages</li>
+					</ul>
+					<p><a href="http://themeteorchef.com/recipes/writing-a-package/" target="_blank">TheMeteorChef - Writing A Package</a></p>
+				</section>
+
+				<section> <!-- TODO: VIEW LAYER ===================================================================================  -->
+
+					<section>
+						<h2>View Layer</h2>
+							<p><strong>Blaze</strong> - Meteor's default view engine</p>
+							<p><strong>React & Angular</strong> - Official support coming with Meteor 1.2</p>
+					</section>
+
+					<section>
+						<h3>Blaze Templates</h3>
+					</section>
+
+					<section>
+						<h3>Spacebars</h3>
+						<p>Meteor fork of handlebars.js</p>
+						<ul>
+							<li><strong>Inclusions</strong>: {{> templateName}}</li>
+							<li><strong>Expressions</strong>: {{title}}</li>
+							<li><strong>Block Helpers</strong>:</li>
+							<ul>
+								<li>{{#each}}...{{/each}}</li>
+								<li>{{#if}}...{{/if}}</li>
+								<li>Among others</li>
+							</ul>
+						</ul>
+						<p>Read the <a href="https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md" target="_blank">docs</a> for more info</p>
+					</section>
+
+					<section>
+						<h3>Example</h3>
+
+						<p  style="text-align: left;"><small>posts_list.html</small></p>
+						<pre><code class="html" data-trim contenteditable>
+&lt;template name="postsList">
+  &lt;div class="posts">
+    {{#each posts}}
+      {{> postItem}}
+    {{/each}}
+  &lt;/div>
+&lt;/template>
+						</code></pre>
+
+						<p style="text-align: left;"><small>posts_item.html</small></p>
+						<pre><code class="html" data-trim contenteditable>
+&lt;template name="postItem">
+  &lt;div class="post {{#if selected}}selected{{/if}}">
+    &lt;div class="post-content">
+      &lt;h3>&lt;a href="{{url}}">{{title}}&lt;/a>&lt;span>{{domain}}&lt;/span>&lt;/h3>
+    &lt;/div>
+  &lt;/div>
+&lt;/template>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Template Helpers</h3>
+
+						<small style="text-align: left; display: block;">posts_list.js</small>
+						<pre><code class="javascript" data-trim contenteditable>
+Template.postsList.helpers({
+  posts: [{
+    title: 'Crater IO',
+    url: 'https://crater.io'
+  },
+  {
+    title: 'Meteor',
+    url: 'http://meteor.com'
+  }]
+});
+						</code></pre>
+
+						<small style="text-align: left; display: block;">posts_item.js</small>
+						<pre><code class="javascript" data-trim contenteditable>
+Template.postItem.helpers({
+  domain: function() {
+    var a = document.createElement('a');
+    a.href = this.url;
+    return a.hostname;
+  }
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Template Events</h3>
+
+						<small style="text-align: left; display: block;">todos_item.js</small>
+						<pre><code class="javascript" data-trim contenteditable>
+Template.todosItem.events({
+  'click button': function(event) {
+    Todos.update(this._id, {$set: {checked: checked}});
+  },
+
+  'blur input[type=text]': function(event) {
+    if (Session.equals(EDITING_KEY, this._id))
+      Session.set(EDITING_KEY, null);
+  }
+});
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Collections</h2>
+						<p>Database Everywhere</p>
+						<p>MiniMongo</p>
+						<p>Define collections in /lib</p>
+						<pre><code class="javascript" data-trim contenteditable>
+Posts = new Mongo.Collection('posts');
+						</code></pre>
+						<p>We did not <em>var</em> the <strong>Posts</strong></p>
+					</section>
+
+					<section>
+						<h3>meteor mongo [demo]</h3>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Pubs and Subs</h2>
 					<p></p>
 				</section>
 
 				<section>
-					<h3>Templates</h3>
+					<h2>Reactivity</h2>
 					<p></p>
 				</section>
 
 				<section>
-					<h3>Collections</h3>
+					<h2>Accounts</h2>
 					<p></p>
 				</section>
 
 				<section>
-					<h3>Pubs and Subs</h3>
-					<p></p>
-				</section>
-
-				<section>
-					<h3>Routing</h3>
-					<p></p>
-				</section>
-
-				<section>
-					<h3>Reactivity/Sessions</h3>
-					<p></p>
-				</section>
-
-				<section>
-					<h3>Accounts</h3>
-					<p></p>
-				</section>
-
-				<section>
-					<h3>Deployment</h3>
-					<p></p>
+					<h2>Deployment</h2>
+					<ul>
+						<li><strong>Meteor subdomain</strong> - meteor deploy myapp.meteor.com</li>
+						<li>For everywhere else there's <a href="https://github.com/arunoda/meteor-up" target="_blank">Meteor Up (mup)</a></li>
+					</ul>
 				</section>
 
 				<section>
@@ -321,26 +465,6 @@
 
 				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
 					<h2>Demo time!</h2>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
 				</section>
 
 				<section>
@@ -410,7 +534,7 @@ function linkify( selector ) {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: false,
+				controls: true,
 				progress: true,
 				history: true,
 				center: true,
