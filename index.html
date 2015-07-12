@@ -438,18 +438,70 @@ Posts = new Mongo.Collection('posts');
 				</section>
 
 				<section>
-					<h2>Pubs and Subs</h2>
-					<p></p>
+
+					<section>
+						<h2>Pubs and Subs</h2>
+						<p>Publications & Subscriptions</p>
+						<p>Distributed Data Protocol (DDP)</p>
+						<p>REST for websockets</p>
+					</section>
+
+					<section>
+						<h3>Example</h3>
+
+						<pre><code class="javascript" data-trim contenteditable>
+// On the server
+Meteor.publish('posts', function(author) {
+  return Posts.find({ flagged: false, author: author });
+});
+
+// On the client
+Meteor.subscribe('posts', 'bob-smith');
+
+// On the client
+Template.posts.helpers({
+    posts: Posts.find();
+    // Client will only see Posts that have been flagged false
+    //   and Posts with the author bob-smith
+})
+						</code></pre>
+						<p>Fully reactive</p>
+						<p>autopublish package</p>
+					</section>
+
 				</section>
 
 				<section>
-					<h2>Reactivity</h2>
-					<p></p>
+
+					<section>
+						<h2>Reactivity</h2>
+						<p>Tracker Library (1kb gzipped)</p>
+						<p>Transparent reactive programming</p>
+					</section>
+
+					<section>
+						<h3>ReactiveVar</h3>
+					</section>
+
+					<section>
+						<h3>ReactiveDict</h3>
+					</section>
+
+					<section>
+						<h3>Tracker.autorun</h3>
+					</section>
+
+					<section>
+						<h3>Blaze</h3>
+						<p>Blaze does all the hard work for you</p>
+					</section>
+
 				</section>
 
 				<section>
 					<h2>Accounts</h2>
-					<p></p>
+					<p><code>meteor add accounts-ui accounts-password</code></p>
+					<p><a href="https://www.meteor.com/accounts" target="_blank">meteor.com/accounts</a></p>
 				</section>
 
 				<section>
@@ -457,6 +509,7 @@ Posts = new Mongo.Collection('posts');
 					<ul>
 						<li><strong>Meteor subdomain</strong> - meteor deploy myapp.meteor.com</li>
 						<li>For everywhere else there's <a href="https://github.com/arunoda/meteor-up" target="_blank">Meteor Up (mup)</a></li>
+						<li>Hot Code Reload (HCR) - used heavily in development</li>
 					</ul>
 				</section>
 
