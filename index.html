@@ -68,7 +68,6 @@
 
 				<section>
 					<h2>The Past</h2>
-					<h1>TODO MEME?</h1>
 				</section>
 
 				<section>
@@ -88,7 +87,6 @@
 					<h3>Rise of the SPAs</h3>
 					<p>Front-end interactivity</p>
 					<p>Driven by mobile devices</p>
-					<h1>TODO MEME buzz lightyear???</h1>
 				</section>
 
 				<section>
@@ -118,8 +116,11 @@
 				</section>
 
 				<section>
+					<h2>The Solution?</h2>
+				</section>
+
+				<section data-background="http://alexbachuk.com/wp-content/uploads/2014/05/universe.png">
 					<h2>The Genesis Of Meteor</h2>
-					<h1>TODO MEME</h1>
 				</section>
 
 				<section>
@@ -194,11 +195,10 @@
 						</p>
 					</section>
 
-					<section>
+					<section data-background="https://upload.wikimedia.org/wikipedia/commons/5/52/Hubble2005-01-barred-spiral-galaxy-NGC1300.jpg">
 						<h3>Galaxy is coming</h3>
 						<p>Containerized hosting solution by MDG</p>
 						<p>Using Docker, AWS, Kubernetes</p>
-						<h1>TODO MEME</h1>
 					</section>
 				</section>
 
@@ -217,9 +217,8 @@
 					<h3>IsoBuild</h3>
 				</section>
 
-				<section>
-					<h1>TODO METEOR BASICS</h1>
-					<h1>TODO MEME</h1>
+				<section data-background="http://rack.1.mshcdn.com/media/ZgkyMDEzLzAzLzIzLzhmL21ldGVvci40MjRhMy5qcGcKcAl0aHVtYgk5NTB4NTM0IwplCWpwZw/b0a3cd1a/8c7/meteor.jpg">
+					<h1>METEOR BASICS</h1>
 				</section>
 
 				<section>
@@ -229,8 +228,7 @@
 						<li>Packages</li>
 						<li>View Layer</li>
 						<li>Collections</li>
-						<li>Pubs and Subs</li>
-						<li>Reactivity</li>
+						<li>Pub Subs</li>
 						<li>Accounts</li>
 						<li>Deployment</li>
 					</ul>
@@ -244,6 +242,7 @@
 						<ul>
 							<li>/server - Code only run on server</li>
 							<li>/client - Code only run on client</li>
+							<li>/anythingElse - Code runs on both the server and client</li>
 							<li>/public - static assets like pics</li>
 						</ul>
 					</section>
@@ -284,6 +283,7 @@
 						<h2>View Layer</h2>
 							<p><strong>Blaze</strong> - Meteor's default view engine</p>
 							<p><strong>React & Angular</strong> - Official support coming with Meteor 1.2</p>
+							<p>Unofficial support for many other libraries, Polymer, Bootstrap, Etc.</p>
 					</section>
 
 					<section>
@@ -395,15 +395,18 @@ Posts = new Mongo.Collection('posts');
 					</section>
 
 					<section>
-						<h3>meteor mongo [demo]</h3>
-						<p>insecure package</p>
+						<h3>meteor mongo</h3>
+						<p>[demo shortly]</p>
 					</section>
 				</section>
 
 				<section>
+					<section data-background="http://cdn1.theodysseyonline.com/files/2014/09/09/635458683216914332478801840_pub.jpg">
+						<h1>Pub Subs</h1>
+					</section>
+
 					<section>
-						<h2>Pubs and Subs</h2>
-						<p>Publications & Subscriptions</p>
+						<h3>Publications & Subscriptions</h3>
 						<p>Distributed Data Protocol (DDP)</p>
 						<p>REST for websockets</p>
 					</section>
@@ -412,13 +415,16 @@ Posts = new Mongo.Collection('posts');
 						<h3>Example</h3>
 
 						<pre><code class="javascript" data-trim contenteditable>
+// In /lib
+Posts = new Meteor.Collection('posts')
+
 // On the server
-Meteor.publish('posts', function(author) {
+Meteor.publish('postsByAuthor', function(author) {
   return Posts.find({ flagged: false, author: author });
 });
 
 // On the client
-Meteor.subscribe('posts', 'bob-smith');
+Meteor.subscribe('postsByAuthor', 'bob-smith');
 
 // On the client
 Template.posts.helpers({
@@ -428,35 +434,14 @@ Template.posts.helpers({
 })
 						</code></pre>
 						<p>Fully reactive</p>
-						<p>autopublish package</p>
+						<p>[Demo]</p>
 					</section>
 				</section>
 
 
 
-				<section>
-					<section>
-						<h2>Reactivity</h2>
-						<p>Tracker Library (1kb gzipped)</p>
-						<p>Transparent reactive programming</p>
-					</section>
-
-					<section>
-						<h3>ReactiveVar</h3>
-					</section>
-
-					<section>
-						<h3>ReactiveDict</h3>
-					</section>
-
-					<section>
-						<h3>Tracker.autorun</h3>
-					</section>
-
-					<section>
-						<h3>Blaze</h3>
-						<p>Blaze does all the hard work for you</p>
-					</section>
+				<section data-background="http://i.imgur.com/s8JlpMN.gif">
+					<h2>Mind=blown</h2>
 				</section>
 
 
@@ -505,7 +490,7 @@ Template.posts.helpers({
 					</ul>
 				</section>
 
-				<section>
+				<section data-background="http://i.imgur.com/ATZuZj4.gif">
 					<h2>Light Speed App Development</h2>
 					<ul>
 						<li>RealTime through DDP</li>
