@@ -1,18 +1,6 @@
 Posts = new Meteor.Collection('posts');
 
-Meteor.methods({
-  insertPost: function(post) {
-    check(post.title, String);
-    check(post.content, String);
-
-    // other validation logic...
-
-    Posts.insert(post);
-  }
-});
-
 if (Meteor.isClient) {
-  Meteor.subscribe('allPosts');
 
   Template.body.helpers({
     posts: function () {
@@ -20,19 +8,11 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.body.events({
-    "click button": function() {
-      var newPost = {
-        title: 'New post from events',
-        content: 'Such Wow'
-      };
-      Meteor.call('insertPost', newPost);
-    }
-  });
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    // Seeding the database with initial posts.
     if(Posts.find().fetch().length === 0) {
       var seededPosts = [{
         title: 'First Post',
@@ -52,9 +32,6 @@ if (Meteor.isServer) {
       console.log('SEEDED');
     }
 
-    Meteor.publish('allPosts', function() {
-      return Posts.find();
-    });
   });
 }
 
