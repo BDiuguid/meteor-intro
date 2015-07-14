@@ -431,7 +431,7 @@ Template.posts.helpers({
     posts: Posts.find();
     // Client will only see Posts that have been flagged false
     //   and Posts with the author bob-smith
-})
+});
 						</code></pre>
 						<p>Fully reactive</p>
 						<p>[Demo]</p>
@@ -516,11 +516,92 @@ Template.posts.helpers({
 					</section>
 
 					<section>
-						<h3>Advanced Teaching</h3>
+						<h2>Advanced Teaching</h2>
 						<ul>
-							<li>Fibers</li>
 							<li>Tracker</li>
+							<li>Fibers</li>
 						</ul>
+					</section>
+
+					<section>
+						<h3>Tracker</h3>
+						<p>Different Strategies for changing when data changes</p>
+						<ul>
+							<li>Poll and diff</li>
+							<li>Events</li>
+							<li>Bindings</li>
+							<li><strong>Reactive</strong></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Tracker</h3>
+						<pre><code class="javascript" data-trim contenteditable>
+var rv1, rvHandle;
+
+rv1 = new ReactiveVar(1);
+
+rvHandle = Tracker.autorun(function() {
+  var val = rv1.get();
+  return console.log("ReactiveVar1 is ", val);
+});
+// > "ReactiveVar1 is 1"
+
+rv1.set(4);
+// > "ReactiveVar1 is 4"
+rv1.set(5);
+// > "ReactiveVar1 is 5"
+rvHandle.stop();
+rv1.set(20);
+// >
+
+						</code></pre>
+						<p><small><a href="htps://github.com/meteor/meteor/wiki/Tracker-Manual" target="_blank">Tracker Manual</a></small></p>
+					</section>
+
+					<section>
+						<h3>Fibers</h3>
+						<p>Allows for synchronous looking code on the back-end</p>
+					</section>
+
+					<section>
+						<h3>Fibers</h3>
+						<pre><code class="javascript" data-trim contenteditable>
+var GithubAPI = Meteor.require('github');
+var ghapi = new GithubAPI({version: "3.0.0"});
+
+Meteor.methods({
+  getProfile: function(username) {
+    ghapi.user.getFrom({user: username}, function(err, profile) {
+      // How to return?
+      // return profile; // This won't work!
+    });
+
+    // We need to return the profile from here!
+  }
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Fibers</h3>
+						<pre><code class="javascript" data-trim contenteditable>
+function getUserProfile(req, callback) {
+  ghapi.user.getFrom(req, callback);
+}
+var wrappedGetProfile = Meteor._wrapAsync(getUserProfile);
+
+Meteor.methods({
+  getProfile: function(username) {
+    return wrappedGetProfile({user: username});
+  }
+});
+
+// OR if you understand how .bind() works.
+
+var wrappedGetProfile = Meteor._wrapAsync(
+        ghapi.user.getFrom.bind(ghapi.user));
+						</code></pre>
 					</section>
 				</section>
 
