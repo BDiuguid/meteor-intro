@@ -52,8 +52,6 @@ if (Meteor.isServer) {
       console.log('SEEDED');
     }
 
-    // TODO: Meteor.method
-
     Meteor.publish('allPosts', function() {
       return Posts.find();
     });
