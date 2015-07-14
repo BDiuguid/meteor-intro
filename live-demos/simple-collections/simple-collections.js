@@ -1,11 +1,32 @@
 Posts = new Meteor.Collection('posts');
 
+Meteor.methods({
+  insertPost: function(post) {
+    check(post.title, String);
+    check(post.content, String);
+
+    // other validation logic...
+
+    Posts.insert(post);
+  }
+});
+
 if (Meteor.isClient) {
 Meteor.subscribe('allPosts');
 
   Template.body.helpers({
     posts: function () {
       return Posts.find();
+    }
+  });
+
+  Template.body.events({
+    "click button": function() {
+      var newPost = {
+        title: 'New post from events',
+        content: 'Such Wow'
+      };
+      Meteor.call('insertPost', newPost);
     }
   });
 
