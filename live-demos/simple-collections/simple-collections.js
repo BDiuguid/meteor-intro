@@ -1,6 +1,7 @@
 Posts = new Meteor.Collection('posts');
 
 if (Meteor.isClient) {
+Meteor.subscribe('allPosts');
 
   Template.body.helpers({
     posts: function () {
@@ -32,6 +33,9 @@ if (Meteor.isServer) {
       console.log('SEEDED');
     }
 
+    Meteor.publish('allPosts', function() {
+      return Posts.find();
+    });
   });
 }
 
