@@ -58,7 +58,7 @@
 					<h1>Meteor JS</h1>
 					<h3>Light Speed App Development</h3>
 					<p>
-						<small>Created by <a href="https://bdiuguid.github.io" target="_blank">Ben Diuguid</a> / <a href="https://twitter.com/bendiuguid" target="_blank">@bendiuguid</a></small>
+						<small>Created by <a href="https://bendiuguid.github.io" target="_blank">Ben Diuguid</a> / <a href="https://twitter.com/bendiuguid" target="_blank">@bendiuguid</a></small>
 					</p>
 				</section>
 
@@ -98,13 +98,13 @@
 				</section>
 
 				<section>
-					<h4>Same type of stack across modern apps</h4>
+					<h4>If you were to roll your own solution, what would you need?</h4>
 					<ul>
-						<li class="fragment fade-in">Stateful bi-directional protocol that's not HTTP</li>
 						<li class="fragment fade-in">Way of watching database for changes</li>
 						<li class="fragment fade-in">Protocol that you've invented that runs on top of WebSockets to push data to the client in realtime</li>
+						<li class="fragment fade-in">Stateful bi-directional protocol that's not HTTP</li>
 						<li class="fragment fade-in">Some kind of cache on the client, because you can't afford the round trip to the server</li>
-						<li class="fragment fade-in">As data changes, actually change the DOM</li>
+						<li class="fragment fade-in">As data changes, you have to actually change the DOM</li>
 					</ul>
 				</section>
 
@@ -196,9 +196,10 @@
 					</section>
 
 					<section data-background="https://upload.wikimedia.org/wikipedia/commons/5/52/Hubble2005-01-barred-spiral-galaxy-NGC1300.jpg">
-						<h3>Galaxy is coming</h3>
+						<h3>Galaxy</h3>
 						<p>Containerized hosting solution by MDG</p>
-						<p>Using Docker, AWS, Kubernetes</p>
+						<p>Using Docker and AWS</p>
+						<p>Handles a lot of the issues of scaling automagically</p>
 					</section>
 				</section>
 
@@ -209,12 +210,11 @@
 				</section>
 
 				<section>
+					<h3>IsoBuild</h3>
 					<h3>LiveQuery</h3>
 					<h3>DDP</h3>
 					<h3>Fullstack DB Drivers</h3>
-					<h3>Tracker</h3>
-					<h3>Blaze</h3>
-					<h3>IsoBuild</h3>
+					<h3>Front End Reactivity (Tracker)</h3>
 				</section>
 
 				<section data-background="http://rack.1.mshcdn.com/media/ZgkyMDEzLzAzLzIzLzhmL21ldGVvci40MjRhMy5qcGcKcAl0aHVtYgk5NTB4NTM0IwplCWpwZw/b0a3cd1a/8c7/meteor.jpg">
@@ -282,8 +282,8 @@
 					<section>
 						<h2>View Layer</h2>
 							<p><strong>Blaze</strong> - Meteor's default view engine</p>
-							<p><strong>React & Angular</strong> - Official support coming with Meteor 1.2</p>
-							<p>Unofficial support for many other libraries, Polymer, Bootstrap, Etc.</p>
+							<p><strong>React & Angular</strong> - Official support came with Meteor 1.2</p>
+							<p>Support for many other libraries, Polymer, Bootstrap, etc.</p>
 					</section>
 
 					<section>
@@ -298,8 +298,8 @@
 							<li><strong>Expressions</strong>: {{title}}</li>
 							<li><strong>Block Helpers</strong>:</li>
 							<ul>
-								<li>{{#each}}...{{/each}}</li>
-								<li>{{#if}}...{{/if}}</li>
+								<li>{{#each}} ... {{/each}}</li>
+								<li>{{#if}} ... {{/if}}</li>
 								<li>Among others</li>
 							</ul>
 						</ul>
@@ -323,9 +323,9 @@
 						<p style="text-align: left;"><small>posts_item.html</small></p>
 						<pre><code class="html" data-trim contenteditable>
 &lt;template name="postItem">
-  &lt;div class="post {{#if selected}}selected{{/if}}">
+  &lt;div class="post {{#if selected}} selected {{/if}}">
     &lt;div class="post-content">
-      &lt;h3>&lt;a href="{{url}}">{{title}}&lt;/a>&lt;span>{{domain}}&lt;/span>&lt;/h3>
+      &lt;h3> &lt;a href="{{url}}">{{title}}&lt;/a> &lt;span>{{domain}}&lt;/span> &lt;/h3>
     &lt;/div>
   &lt;/div>
 &lt;/template>
@@ -340,11 +340,13 @@
 Template.postsList.helpers({
   posts: [{
     title: 'Crater IO',
-    url: 'https://crater.io'
+    url: 'https://crater.io',
+    selected: true
   },
   {
     title: 'Meteor',
-    url: 'http://meteor.com'
+    url: 'http://meteor.com',
+    selected: false
   }]
 });
 						</code></pre>
@@ -391,7 +393,7 @@ Template.todosItem.events({
 						<pre><code class="javascript" data-trim contenteditable>
 Posts = new Mongo.Collection('posts');
 						</code></pre>
-						<p>We did not <em>var</em> the <strong>Posts</strong></p>
+						<p>Note: We did not <em>var</em> the <strong>Posts</strong></p>
 					</section>
 
 					<section>
@@ -484,9 +486,9 @@ Template.posts.helpers({
 				<section>
 					<h2>Growing Rapidly</h2>
 					<ul>
-						<li>Over 220 meetup groups around the world - <a href="http://meteor.meetup.com" target="_blank">meteor.meetup.com</a></li>
-						<li>Over 6,300 authored packages on <a href="https://atmospherejs.com/" target="_blank">atmospherejs.com</a></li>
-						<li>Ranked #10 on GitHub</li>
+						<li>Over 260 meetup groups around the world - <a href="http://meteor.meetup.com" target="_blank">meteor.meetup.com</a></li>
+						<li>Over 8,600 authored packages on <a href="https://atmospherejs.com/" target="_blank">atmospherejs.com</a></li>
+						<li>Ranked #9 on GitHub</li>
 					</ul>
 				</section>
 
@@ -504,14 +506,13 @@ Template.posts.helpers({
 					<section>
 						<h2>Further Learning</h2>
 						<ul>
-							<li>Meteor.com - <a href="https://meteor.com/learn" target="_blank">meteor.com/learn</a></li>
-							<li>Official Meteor Tutorial - <a href="https://www.meteor.com/install" target="_blank">meteor.com/install</a></li>
-							<li>Discover Meteor - <a href="https://book.discovermeteor.com/" target="_blank">book.discovermeteor.com</a></li>
-							<li>Your First Meteor App - <a href="http://meteortips.com/first-meteor-tutorial/" target="_blank">meteortips.com</a></li>
-							<li>Bulletproof Meteor - <a href="https://bulletproofmeteor.com/" target="_blank">bulletproofmeteor.com</a></li>
 							<li>Crater.io - <a href="https://crater.io/" target="_blank">crater.io</a></li>
+							<li>Official Meteor Tutorial - <a href="https://www.meteor.com/tutorials/blaze/creating-an-app" target="_blank">Official Meteor Tutorial</a></li>
+							<li>Discover Meteor - <a href="https://book.discovermeteor.com/" target="_blank">book.discovermeteor.com</a></li>
+							<li>Meteor Forums - <a href="https://forums.meteor.com/" target="_blank">forums.meteor.com</a></li>
+							<li>The Meteor Guide - <a href="https://github.com/meteor/guide" target="_blank">github.com/meteor/guide</a></li>
+							<li>Bulletproof Meteor - <a href="https://bulletproofmeteor.com/" target="_blank">bulletproofmeteor.com</a></li>
 							<li>Official Meteor Docs - <a href="https://docs.meteor.com/" target="_blank">docs.meteor.com</a></li>
-							<li>More Links - <a href="https://github.com/ericdouglas/Meteor-Learning" target="_blank">github.com/ericdouglas/Meteor-Learning</a></li>
 						</ul>
 					</section>
 
@@ -537,11 +538,9 @@ Template.posts.helpers({
 					<section>
 						<h3>Tracker</h3>
 						<pre><code class="javascript" data-trim contenteditable>
-var rv1, rvHandle;
+var rv1 = new ReactiveVar(1);
 
-rv1 = new ReactiveVar(1);
-
-rvHandle = Tracker.autorun(function() {
+var rvHandle = Tracker.autorun(function() {
   var val = rv1.get();
   return console.log("ReactiveVar1 is ", val);
 });
@@ -553,10 +552,10 @@ rv1.set(5);
 // > "ReactiveVar1 is 5"
 rvHandle.stop();
 rv1.set(20);
-// >
+// > Nothing gets logged...
 
 						</code></pre>
-						<p><small><a href="htps://github.com/meteor/meteor/wiki/Tracker-Manual" target="_blank">Tracker Manual</a></small></p>
+						<p><small><a href="https://github.com/meteor/meteor/wiki/Tracker-Manual" target="_blank">Tracker Manual</a></small></p>
 					</section>
 
 					<section>
@@ -612,7 +611,7 @@ var wrappedGetProfile = Meteor._wrapAsync(
 						<br>
 						+ Source Code on GitHub
 						<br>
-						&nbsp; &nbsp; - <a href="https://github.com/bdiuguid/meteor-intro" target="_blank">github.com/bdiuguid/meteor-intro</a>
+						&nbsp; &nbsp; - <a href="https://github.com/bendiuguid/meteor-intro" target="_blank">github.com/bendiuguid/meteor-intro</a>
 						<br>
 						+ <a href="https://twitter.com/bendiuguid" target="_blank">@bendiuguid</a>
 					</p>
