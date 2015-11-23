@@ -4,15 +4,14 @@ Meteor.methods({
   insertPost: function(post) {
     check(post.title, String);
     check(post.content, String);
-
     // other validation logic...
-
     Posts.insert(post);
   }
 });
 
+
 if (Meteor.isClient) {
-Meteor.subscribe('allPosts');
+  Meteor.subscribe('allPosts');
 
   Template.body.helpers({
     posts: function () {
@@ -26,6 +25,7 @@ Meteor.subscribe('allPosts');
         title: 'New post from events',
         content: 'Such Wow'
       };
+      //Posts.insert(newPost);
       Meteor.call('insertPost', newPost);
     }
   });
